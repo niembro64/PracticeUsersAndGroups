@@ -1,6 +1,7 @@
 # Eric's Version
 from flask_app import app
-from flask_app.controllers import controller_groups, controller_users
+from flask_app.controllers import controller_groups
+from flask_app.controllers import controller_users
 
 
 
