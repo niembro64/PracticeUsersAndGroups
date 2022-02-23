@@ -20,12 +20,19 @@
             <h2>New User</h2>
             <form action="/users/fun_create_new" method="POST">
                 <label for="user_name">name</label>
-                <input type="text" name="user_name">
+                <input type="text" name="user_name" />
                 <label for="email">email</label>
-                <input type="text" name="email">
+                <input type="text" name="email" />
                 <label for="password">password</label>
-                <input type="password" name="password">
+                <input type="password" name="password" />
 
+                <input
+                    class="r"
+                    type="submit"
+                    name="create"
+                    id="create"
+                    value="Create"
+                />
             </form>
         </div>
         <div class="div_show">
