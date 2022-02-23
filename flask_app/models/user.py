@@ -24,3 +24,8 @@ class User:
             users.append(cls(row))
         return users
 
+    @classmethod
+    def save_user(cls, data):
+        query = "INSERT INTO users (name, password, email, created_at, updated_at) VALUES (%(user_name)s, %(password)s, %(email)s, NOW(), NOW());"
+        new_id = connectToMySQL("users_and_groups").query_db(query, data)
+        return new_id

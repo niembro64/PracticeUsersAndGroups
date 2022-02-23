@@ -13,9 +13,24 @@
         <title>Document</title>
     </head>
     <body>
-
         <h1>Users</h1>
-                <a href="/groups"></a>
+        <a href="/groups">Groups</a>
 
+        <div class="div_new">
+            <h2>New User</h2>
+            <form action="/users/fun_create_new" method="POST">
+                <label for="user_name">name</label>
+                <input type="text" name="user_name">
+                <label for="email">email</label>
+                <input type="text" name="email">
+                <label for="password">password</label>
+                <input type="password" name="password">
+
+            </form>
+        </div>
+        <div class="div_show">
+            <h2>Users</h2>
+            <form action="/users/fun_show_all"></form>
+        </div>
     </body>
 </html>
