@@ -22,6 +22,5 @@ def fun_create_new_gang():
     data = {
         "name": request.form["name"]
     }
-    Gang.p("after data")
     Gang.save_gang(data)
     return redirect("/gangs")

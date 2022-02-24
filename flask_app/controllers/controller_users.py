@@ -31,6 +31,5 @@ def fun_create_new_user():
         "email": request.form["email"],
         "password": request.form["password"]
     }
-    User.p(data)
     user_id = User.save_user(data)
     return redirect("/users")
