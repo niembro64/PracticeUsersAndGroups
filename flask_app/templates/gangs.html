@@ -32,7 +32,13 @@
         </div>
         <div class="div_show">
             <h2>Gangs</h2>
-            
+            <p>----------</p>
+            {% for gang in all_gangs %}
+            <p>{{gang.name}}</p>
+            <p>{{gang.email}}</p>
+            <p>{{gang.password}}</p>
+            <p>----------</p>
+            {% endfor %}
         </div>
     </body>
     </body>

@@ -10,7 +10,8 @@ bcrypt = Bcrypt(app)
 def show_gangs():
     l = "show_gangs"
     Gang.p(l)
-    return render_template("gangs.html")
+    all_gangs = Gang.get_all_gangs()
+    return render_template("gangs.html", all_gangs = all_gangs)
 
 ####################
 
@@ -22,5 +23,5 @@ def fun_create_new_gang():
         "name": request.form["name"]
     }
     Gang.p("after data")
-    gang_id = Gang.save_gang(data)
-    return redirect("/gangs", gang_id = gang_id)
+    Gang.save_gang(data)
+    return redirect("/gangs")

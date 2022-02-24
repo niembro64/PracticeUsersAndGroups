@@ -13,6 +13,18 @@ class Gang:
         self.updated_at = data["updated_at"]
 
     @classmethod
+    def get_all_gangs(cls):
+        l = "get_all_gangs"
+        Gang.p(l)
+        query = "SELECT * FROM gangs;"
+        results = connectToMySQL('users_and_gangs').query_db(query)
+        all_gangs = []
+        for row in results:
+            one_gang = cls(row)
+            all_gangs.append(one_gang)
+        return all_gangs
+
+    @classmethod
     def save_gang(cls, data):
         l = "save_gang"
         Gang.p(l)
