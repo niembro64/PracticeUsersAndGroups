@@ -1,6 +1,6 @@
 # Eric's Version
 from flask_app import app
-from flask_app.controllers import controller_groups
+from flask_app.controllers import controller_gangs
 from flask_app.controllers import controller_users
 
 

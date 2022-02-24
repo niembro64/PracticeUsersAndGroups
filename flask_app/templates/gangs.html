@@ -17,13 +17,16 @@
         <a href="/users">Users</a>
         
         <div class="div_new">
-            <form action="/groups/fun_create_new">
+            <form action="/groups/fun_create_new" method="POST">
                 <label for="name">name</label>
                 <input type="text" name="name">
-                <label for="email">email</label>
-                <input type="text" name="email">
-                <label for="password">password</label>
-                <input type="password" name="password">
+                <input
+                    class="r"
+                    type="submit"
+                    name="create_group"
+                    id="create_group"
+                    value="Create Group"
+                />
             </form>
         </div>
         <div class="div_show">
