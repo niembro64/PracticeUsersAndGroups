@@ -10,8 +10,10 @@ bcrypt = Bcrypt(app)
 def show_gangs():
     l = "show_gangs"
     Gang.p(l)
-    all_gangs = Gang.get_all_gangs()
-    return render_template("gangs.html", all_gangs = all_gangs)
+    # all_gangs = Gang.get_all_gangs()
+    # return render_template("gangs.html", all_gangs = all_gangs)
+    a = Gang.get_all_gangs_with_users()
+    return render_template("gangs.html", a = a)
 
 ####################
 
