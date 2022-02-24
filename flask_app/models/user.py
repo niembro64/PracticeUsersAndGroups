@@ -20,16 +20,17 @@ class User:
         User.p(l)
         query = "SELECT * FROM users;"
         results = connectToMySQL('users_and_gangs').query_db(query)
-        users = []
+        all_users = []
         for row in results:
-            users.append(cls(row))
-        return users
+            one_user = cls(row)
+            all_users.append(one_user)
+        return all_users
 
     @classmethod
     def save_user(cls, data):
         l = "save_user"
         User.p(l)
-        query = "INSERT INTO users (name, email, password, created_at, updated_at) VALUES (%(user_name)s, %(email)s, %(password)s, NOW(), NOW());"
+        query = "INSERT INTO users (name, email, password, created_at, updated_at) VALUES (%(name)s, %(email)s, %(password)s, NOW(), NOW());"
         new_id = connectToMySQL("users_and_gangs").query_db(query, data)
         return new_id
 
@@ -37,6 +38,6 @@ class User:
 
     @staticmethod
     def p(l):
-        print("------------------------")
-        print(f"{l}")
-        print("------------------------")
+        print("------------------------------------------------")
+        print(f"------------------------ {l}")
+        print("------------------------------------------------")

@@ -19,8 +19,8 @@
         <div class="div_new">
             <h2>New User</h2>
             <form action="/users/fun_create_new" method="POST">
-                <label for="user_name">name</label>
-                <input type="text" name="user_name" />
+                <label for="name">name</label>
+                <input type="text" name="name" />
                 <label for="email">email</label>
                 <input type="text" name="email" />
                 <label for="password">password</label>
@@ -37,7 +37,13 @@
         </div>
         <div class="div_show">
             <h2>Users</h2>
-            <form action="/users/fun_show_all"></form>
+            <p>----------</p>
+            {% for user in all_users %}
+            <p>{{user.name}}</p>
+            <p>{{user.email}}</p>
+            <p>{{user.password}}</p>
+            <p>----------</p>
+            {% endfor %}
         </div>
     </body>
 </html>
